@@ -7,6 +7,9 @@ import com.example.myapplication.models.Service
 
 @Dao
 interface ServiceDao {
+    @Query("SELECT * FROM services")
+    suspend fun getAllServices(): List<Service>
+
     @Insert
     suspend fun insertAll(services: List<Service>)
 

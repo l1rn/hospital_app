@@ -19,7 +19,9 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.enter_to_app_button).setOnClickListener {
             startActivity(Intent(this, LobbyActivity::class.java))
         }
-
+        findViewById<Button>(R.id.database_button).setOnClickListener{
+            startActivity(Intent(this, DatabaseActivity::class.java))
+        }
         lifecycleScope.launch {
             val db = AppDatabase.getDatabase(applicationContext)
             val services = db.serviceDao()

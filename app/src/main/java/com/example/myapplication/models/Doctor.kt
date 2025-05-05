@@ -1,6 +1,7 @@
 package com.example.myapplication.models
 
 import android.graphics.Bitmap
+import androidx.annotation.Nullable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Ignore

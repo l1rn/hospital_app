@@ -1,11 +1,10 @@
 package com.example.myapplication.models
 
-import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "patients")
-data class Patient (
+data class Patient(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
     val fullName: String,

@@ -5,39 +5,52 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DatabaseActivity">
+    tools:context=".DatabaseActivity"
+    android:background="#F1F3F4">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="120dp"
+        android:gravity="center"
         android:orientation="vertical">
-
         <Button
             android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:backgroundTint="#4285F4"
+            android:backgroundTint="#A50E0E"
             android:text="Назад" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/service_doctors"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
+            android:width="300dp"
             android:backgroundTint="#4285F4"
-            android:text="Назад" />
+            android:text="Услуги врачей" />
         <Button
             android:id="@+id/button4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
+            android:width="300dp"
+
             android:backgroundTint="#4285F4"
-            android:text="Назад" />
+            android:text="Врачи" />
         <Button
             android:id="@+id/button5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
+            android:width="300dp"
             android:backgroundTint="#4285F4"
-            android:text="Назад" />
+            android:text="Пациенты" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

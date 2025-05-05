@@ -64,8 +64,16 @@ abstract class AppDatabase : RoomDatabase() {
 
             if (db.serviceDao().count() == 0) {
                 val defaultServices = listOf(
-                    Service(1, "Базовая проверка", 100.0),
-                    Service(2, "Рентген", 250.0)
+                    Service(1, "Консультация врача", 500.0),
+                    Service(2, "Рентген", 250.0),
+                    Service(3, "Анализ крови", 150.0),
+                    Service(4, "МРТ", 1200.0),
+                    Service(5, "Прививка", 300.0),
+                    Service(6, "Стоматология", 800.0),
+                    Service(7, "УЗИ", 400.0),
+                    Service(8, "Физиотерапия", 350.0),
+                    Service(9, "ЭКГ", 200.0),
+                    Service(10, "Хирургическая операция", 5000.0)
                 )
                 db.serviceDao().insertAll(defaultServices)
             }
