@@ -12,6 +12,9 @@ data class Doctor(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
     val name: String?,
-    val photoUri: String,
+    val email: String,
+    val phone: String,
+    val photoUri: Int,
+    val role: Role = Role.DOCTOR,
     val experience: Int
 )

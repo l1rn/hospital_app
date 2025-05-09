@@ -76,6 +76,5 @@ class ServiceListActivity : AppCompatActivity() {
 
             return view
         }
-
     }
 }

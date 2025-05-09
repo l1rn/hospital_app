@@ -11,7 +11,11 @@ data class DoctorWithServices(
     @Relation(
         parentColumn = "id",
         entityColumn = "id",
-        associateBy = Junction(DoctorService::class)
+        associateBy = Junction(
+            value =  DoctorService::class,
+            parentColumn = "doctorId",
+            entityColumn = "serviceId"
+        )
     )
     val services: List<Service>
 )

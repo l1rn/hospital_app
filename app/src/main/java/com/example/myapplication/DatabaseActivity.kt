@@ -16,6 +16,9 @@ class DatabaseActivity : AppCompatActivity() {
         findViewById<Button>(R.id.service_doctors).setOnClickListener {
             startActivity(Intent(this, ServiceListActivity::class.java))
         }
+        findViewById<Button>(R.id.back_button_from_db).setOnClickListener {
+            finish()
+        }
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)

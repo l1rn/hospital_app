@@ -12,6 +12,7 @@ import com.example.myapplication.dao.ServiceDao
 import com.example.myapplication.models.Appointment
 import com.example.myapplication.models.Doctor
 import com.example.myapplication.models.Patient
+import com.example.myapplication.models.Role
 import com.example.myapplication.models.Service
 import com.example.myapplication.services.DoctorService
 import kotlinx.coroutines.CoroutineScope
@@ -26,7 +27,7 @@ import kotlinx.coroutines.launch
         Appointment::class,
         DoctorService::class
     ],
-    version = 2
+    version = 1
 )
 abstract class AppDatabase : RoomDatabase() {
     abstract fun appointmentDao(): AppointmentDao
@@ -52,6 +53,9 @@ abstract class AppDatabase : RoomDatabase() {
             }
         }
     }
+    public fun checkCredentials(phone: String, context: Context){
+
+    }
     private class DatabaseCallback(private val context: Context) : RoomDatabase.Callback(){
         override fun onCreate(db: SupportSQLiteDatabase) {
             super.onCreate(db)
@@ -76,6 +80,54 @@ abstract class AppDatabase : RoomDatabase() {
                     Service(10, "Хирургическая операция", 5000.0)
                 )
                 db.serviceDao().insertAll(defaultServices)
+            }
+            if(db.doctorDao().countDoctors() == 0){
+                val defaultDoctors = listOf(
+                    Doctor(id = 1, name = "Попов Владимир Петрович", email = "popov@mail.ru", phone = "7999999111", role = Role.DOCTOR, photoUri =  R.drawable.doctor1, experience = 10),
+                    Doctor(
+                        id = 2,
+                        name = "Иванова Мария Сергеевна",
+                        email = "ivanova@mail.ru",
+                        phone = "7999888222",
+                        role = Role.DOCTOR,
+                        photoUri = R.drawable.doctor2,
+                        experience = 8
+                    ),
+                    Doctor(
+                        id = 3,
+                        name = "Сидоров Алексей Дмитриевич",
+                        email = "sidorov@mail.ru",
+                        phone = "7999777333",
+                        role = Role.DOCTOR,
+                        photoUri = R.drawable.doctor3,
+                        experience = 15
+                    ),
+                    Doctor(
+                        id = 4,
+                        name = "Кузнецова Елена Викторовна",
+                        email = "kuznetsova@mail.ru",
+                        phone = "7999666444",
+                        role = Role.DOCTOR,
+                        photoUri = R.drawable.doctor4,
+                        experience = 5
+                    ),
+                    Doctor(
+                        id = 5,
+                        name = "Петров Денис Олегович",
+                        email = "petrov@mail.ru",
+                        phone = "7999555555",
+                        role = Role.DOCTOR,
+                        photoUri = R.drawable.doctor6,
+                        experience = 12
+                    )
+                )
+                db.doctorDao().insertAll(defaultDoctors)
+            }
+            if(db.patientDao().count() == 0){
+                val defaultPatients = listOf(
+                    Patient(id = 1, fullName = "Абдула Гангрена Романович", birthDate = "11.11.2000", email = "abdula@gmail.com", phone = "79998887771", role = Role.PATIENT)
+                )
+                db.patientDao().insertAll(defaultPatients)
             }
         }
 

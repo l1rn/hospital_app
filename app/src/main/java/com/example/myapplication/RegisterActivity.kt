@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.myapplication.models.Patient
+import com.example.myapplication.models.Role
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -19,6 +20,7 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var email: EditText
     private lateinit var birthday: EditText
     private lateinit var phone: EditText
+    private lateinit var reason: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +45,7 @@ class RegisterActivity : AppCompatActivity() {
                         fullName = name.text.toString(),
                         birthDate = birthday.text.toString(),
                         email = email.text.toString(),
+                        role = Role.PATIENT,
                         phone = phone.text.toString()
                     )
                     patients.insert(patient)
