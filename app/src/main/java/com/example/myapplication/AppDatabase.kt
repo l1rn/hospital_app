@@ -53,9 +53,7 @@ abstract class AppDatabase : RoomDatabase() {
             }
         }
     }
-    public fun checkCredentials(phone: String, context: Context){
 
-    }
     private class DatabaseCallback(private val context: Context) : RoomDatabase.Callback(){
         override fun onCreate(db: SupportSQLiteDatabase) {
             super.onCreate(db)
@@ -122,6 +120,26 @@ abstract class AppDatabase : RoomDatabase() {
                     )
                 )
                 db.doctorDao().insertAll(defaultDoctors)
+                val selectedServiceIds1 = listOf(1, 2, 3)
+                selectedServiceIds1.forEach { serviceId ->
+                    db.doctorDao().insertDoctorService(DoctorService(defaultDoctors[1].id, serviceId))
+                }
+                val selectedServiceIds2 = listOf(2, 3, 4)
+                selectedServiceIds2.forEach {serviceId ->
+                    db.doctorDao().insertDoctorService(DoctorService(defaultDoctors[2].id, serviceId))
+                }
+                val selectedServiceIds3 = listOf(5, 6, 7)
+                selectedServiceIds3.forEach {
+                    serviceId -> db.doctorDao().insertDoctorService(DoctorService(defaultDoctors[3].id, serviceId))
+                }
+                val selectedServiceIds4 = listOf(8, 9, 10)
+                selectedServiceIds4.forEach {
+                    serviceId -> db.doctorDao().insertDoctorService(DoctorService(defaultDoctors[4].id, serviceId))
+                }
+                val selectedServiceIds5 = listOf(2, 5, 8)
+                selectedServiceIds5.forEach {
+                    serviceId -> db.doctorDao().insertDoctorService(DoctorService(defaultDoctors[5].id, serviceId))
+                }
             }
             if(db.patientDao().count() == 0){
                 val defaultPatients = listOf(

@@ -17,7 +17,8 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import com.example.myapplication.dao.DoctorDao
 import com.example.myapplication.models.Doctor
-import com.example.myapplication.models.Service
+import com.example.myapplication.services.DoctorService
+import com.example.myapplication.services.DoctorWithServices
 import kotlinx.coroutines.launch
 
 class AllDoctorsActivity : AppCompatActivity() {
@@ -49,35 +50,33 @@ class AllDoctorsActivity : AppCompatActivity() {
     }
     private fun loadServices(){
         lifecycleScope.launch {
-            val doctors = doctorDao.getAllDoctors()
-            adapter.submitList(doctors)
+            val allDoctorsServices = doctorDao.getAllDoctorsWithServices()
+            adapter.submitList(allDoctorsServices)
         }
     }
 
     inner class DoctorsAdapter(context: Context) : BaseAdapter(){
         private val inflater = LayoutInflater.from(context)
-        private var doctors = emptyList<Doctor>()
-
-        fun submitList(newList: List<Doctor>){
-            doctors = newList
+        private var doctorServices = emptyList<DoctorWithServices>()
+        fun submitList(newList: List<DoctorWithServices>){
+            doctorServices = newList
             notifyDataSetChanged()
         }
+        override fun getCount(): Int = doctorServices.size
 
-        override fun getCount(): Int = doctors.size
+        override fun getItem(p0: Int): DoctorWithServices = doctorServices[p0]
 
-        override fun getItem(p0: Int): Doctor = doctors[p0]
-
-        override fun getItemId(p0: Int): Long = doctors[p0].id.toLong()
+        override fun getItemId(p0: Int): Long = doctorServices[p0].doctor.id.toLong()
 
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View{
             val view = convertView ?: inflater.inflate(R.layout.doctor_preview, parent, false)
-            val doctor = getItem(position)
+            val item = getItem(position)
 
-            view.findViewById<ImageView>(R.id.doctor_photo).setImageResource(doctor.photoUri)
-            view.findViewById<TextView>(R.id.doctor_name).text = doctor.name
-
+            view.findViewById<ImageView>(R.id.doctor_photo).setImageResource(item.doctor.photoUri)
+            view.findViewById<TextView>(R.id.doctor_name).text = item.doctor.name
+            val servicesText = item.services.joinToString(", ") { it.name }
+            view.findViewById<TextView>(R.id.doctor_sevices).text = servicesText
             return view
         }
-
     }
 }

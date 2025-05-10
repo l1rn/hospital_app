@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DoctorCardActivity"
+    android:background="#F1F3F4">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical">
+            <Space
+                android:layout_width="40dp"
+                android:layout_height="match_parent"/>
+
+            <Button
+                android:id="@+id/back_button_from_doctor_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="Назад"
+                android:textColor="#202124"
+                android:backgroundTint="#FAD2CF"
+                android:fontFamily="@font/montserrat_medium"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="680dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/cardDoctorPhoto"
+                android:layout_width="300dp"
+                android:scaleType="centerCrop"
+                android:layout_height="300dp"
+                tools:src="@drawable/doctor1"
+
+                />
+            <TextView
+                android:layout_width="300dp"
+                android:text="ФИО"
+                android:textSize="22dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center_vertical"
+                android:layout_height="28dp"/>
+            <TextView
+                android:id="@+id/cardDoctorName"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="4dp"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:textColor="#202124"
+                android:fontFamily="@font/montserrat_medium"
+                tools:text="Скам Скамович"
+                android:background="#D2E3FC"/>
+            <TextView
+                android:layout_width="300dp"
+                android:text="Стаж"
+                android:textSize="22dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center_vertical"
+                android:layout_height="28dp"/>
+            <TextView
+                android:id="@+id/cardDoctorExp"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="4dp"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:textColor="#202124"
+                android:fontFamily="@font/montserrat_medium"
+                tools:text="10 лет стажа"
+                android:background="#D2E3FC"/>
+            <TextView
+                android:layout_width="300dp"
+                android:text="Должность"
+                android:textSize="22dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center_vertical"
+                android:layout_height="28dp"/>
+            <TextView
+                android:id="@+id/cardDoctorRole"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="4dp"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:textColor="#202124"
+                android:fontFamily="@font/montserrat_medium"
+                tools:text="Должность: Доктор"
+                android:background="#D2E3FC"/>
+            <TextView
+                android:layout_width="300dp"
+                android:text="Услуги доктора"
+                android:textSize="22dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center_vertical"
+                android:layout_height="28dp"/>
+
+            <TextView
+                android:id="@+id/cardDoctorServices"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="4dp"
+                android:background="#D2E3FC"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center"
+                android:textColor="#202124"
+                android:textSize="16sp"
+                tools:text="Консультация, Рентген, Анализ крови" />
+
+            <Button
+                android:id="@+id/more_about_button"
+                android:layout_width="wrap_content"
+                android:text="Записаться"
+                android:fontFamily="@font/montserrat_medium"
+                android:textSize="20dp"
+                android:backgroundTint="#34A853"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
