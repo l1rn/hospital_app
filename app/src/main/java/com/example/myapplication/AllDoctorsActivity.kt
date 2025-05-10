@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -76,6 +77,12 @@ class AllDoctorsActivity : AppCompatActivity() {
             view.findViewById<TextView>(R.id.doctor_name).text = item.doctor.name
             val servicesText = item.services.joinToString(", ") { it.name }
             view.findViewById<TextView>(R.id.doctor_sevices).text = servicesText
+            val intent = Intent(applicationContext, DoctorCardActivity::class.java).apply {
+                putExtra("DOCTOR_ID", item.doctor.id)
+            }
+            view.findViewById<Button>(R.id.more_about_button).setOnClickListener {
+                startActivity(intent)
+            }
             return view
         }
     }
