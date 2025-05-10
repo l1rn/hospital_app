@@ -19,6 +19,9 @@ interface PatientDao {
     @Insert
     suspend fun insertAll(patients: List<Patient>)
 
+    @Query("SELECT id FROM patients WHERE phone = :phone")
+    suspend fun getIdByPhone(phone: String): Int
+
     @Query("SELECT EXISTS(SELECT * FROM patients WHERE phone = :phone)")
     suspend fun isPatientExists(phone: String): Boolean
 }

@@ -33,5 +33,6 @@ data class Appointment(
     val patientId: Int,
     val doctorId: Int,
     val serviceId: Int,
-    val dateTime: String
+    val dateTime: String,
+    val reason: String
 )

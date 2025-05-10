@@ -20,14 +20,19 @@ interface DoctorDao {
     @Insert
     suspend fun insertAll(doctors: List<Doctor>)
 
+    @Transaction
     @Query("SELECT * FROM doctors WHERE id = :doctorId")
     suspend fun getDoctorWithServices(doctorId: Int): DoctorWithServices
 
+    @Transaction
     @Query("SELECT * FROM doctors")
     suspend fun getAllDoctorsWithServices(): List<DoctorWithServices>
 
     @Query("SELECT COUNT(*) FROM doctors")
     suspend fun countDoctors(): Int
+
+    @Query("SELECT id FROM doctors WHERE phone = :phone")
+    suspend fun getIdByPhone(phone: String): Int
 
     @Query("SELECT EXISTS(SELECT * FROM doctors WHERE phone = :phone)")
     suspend fun isDoctorExists(phone: String): Boolean
