@@ -71,12 +71,26 @@ class DoctorProfileActivity : AppCompatActivity() {
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View{
             val view = convertView ?: inflater.inflate(R.layout.patient_item, parent, false)
             val item = getItem(position)
-
+            view.findViewById<TextView>(R.id.tName).text = "ФИО"
             view.findViewById<TextView>(R.id.pFullName).text = item.patient.fullName
+
+            view.findViewById<TextView>(R.id.tBirthDate).text = "Дата рождения"
             view.findViewById<TextView>(R.id.pBirthDate).text = item.patient.birthDate
+
+            view.findViewById<TextView>(R.id.tEmail).text = "Почта"
             view.findViewById<TextView>(R.id.pEmail).text = item.patient.email
+
+            view.findViewById<TextView>(R.id.tPhone).text = "Телефон"
             view.findViewById<TextView>(R.id.pPhone).text = item.patient.phone
 
+            view.findViewById<TextView>(R.id.tReason).text = "Причина"
+            view.findViewById<TextView>(R.id.pReason).text = item.appointment.reason
+
+            view.findViewById<TextView>(R.id.tDate).text = "Дата посещения"
+            view.findViewById<TextView>(R.id.pDate).text = item.appointment.dateTime
+
+            view.findViewById<TextView>(R.id.tService).text = "Услуга"
+            view.findViewById<TextView>(R.id.pService).text = item.service.name
             return view
         }
 

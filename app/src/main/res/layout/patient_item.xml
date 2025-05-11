@@ -7,7 +7,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="440dp"
         android:orientation="vertical"
         android:gravity="center">
         <TextView
@@ -19,10 +19,12 @@
             android:layout_height="50dp"/>
 
         <TextView
+            android:id="@+id/tName"
             android:layout_width="301dp"
             android:layout_height="24dp"
             android:fontFamily="@font/montserrat_medium"
             android:textSize="21dp"
+            android:textColor="#202124"
             tools:text="ФИО" />
         <TextView
             android:id="@+id/pFullName"
@@ -31,12 +33,15 @@
             android:fontFamily="@font/montserrat_medium"
             android:textSize="19dp"
             android:background="#CEEAD6"
+            android:textColor="#202124"
             tools:text="Попов Крутой Скамер"/>
         <TextView
+            android:id="@+id/tBirthDate"
             android:layout_width="300dp"
             android:layout_height="24dp"
             android:fontFamily="@font/montserrat_medium"
             android:textSize="21dp"
+            android:textColor="#202124"
             tools:text="Дата Рождения"/>
         <TextView
             android:id="@+id/pBirthDate"
@@ -45,12 +50,15 @@
             android:fontFamily="@font/montserrat_medium"
             android:textSize="19dp"
             android:background="#CEEAD6"
+            android:textColor="#202124"
             tools:text="22.11.2003"/>
         <TextView
+            android:id="@+id/tEmail"
             android:layout_width="300dp"
             android:layout_height="24dp"
             android:fontFamily="@font/montserrat_medium"
             android:textSize="21dp"
+            android:textColor="#202124"
             tools:text="Почта"/>
         <TextView
             android:id="@+id/pEmail"
@@ -59,12 +67,15 @@
             android:fontFamily="@font/montserrat_medium"
             android:textSize="19dp"
             android:background="#CEEAD6"
+            android:textColor="#202124"
             tools:text="popov@mail.ru"/>
         <TextView
+            android:id="@+id/tPhone"
             android:layout_width="300dp"
             android:layout_height="24dp"
             android:fontFamily="@font/montserrat_medium"
             android:textSize="21dp"
+            android:textColor="#202124"
             tools:text="Телефон"/>
         <TextView
             android:id="@+id/pPhone"
@@ -73,7 +84,58 @@
             android:fontFamily="@font/montserrat_medium"
             android:textSize="19dp"
             android:background="#CEEAD6"
+            android:textColor="#202124"
             tools:text="8999111222"/>
-
+        <TextView
+            android:id="@+id/tReason"
+            android:layout_width="300dp"
+            android:layout_height="24dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="21dp"
+            android:textColor="#202124"
+            tools:text="Причина"/>
+        <TextView
+            android:id="@+id/pReason"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="19dp"
+            android:textColor="#202124"
+            android:background="#CEEAD6"
+            tools:text="8999111222"/>
+        <TextView
+            android:id="@+id/tDate"
+            android:layout_width="300dp"
+            android:layout_height="24dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="21dp"
+            android:textColor="#202124"
+            tools:text="Дата"/>
+        <TextView
+            android:id="@+id/pDate"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="19dp"
+            android:textColor="#202124"
+            android:background="#CEEAD6"
+            tools:text="8999111222"/>
+        <TextView
+            android:id="@+id/tService"
+            android:layout_width="300dp"
+            android:layout_height="24dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="21dp"
+            android:textColor="#202124"
+            tools:text="Услуга"/>
+        <TextView
+            android:id="@+id/pService"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="19dp"
+            android:textColor="#202124"
+            android:background="#CEEAD6"
+            tools:text="8999111222"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
