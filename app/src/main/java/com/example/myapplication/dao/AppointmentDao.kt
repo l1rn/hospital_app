@@ -18,5 +18,5 @@ interface AppointmentDao {
 
     @Transaction
     @Query("SELECT * FROM appointments WHERE doctorId = :doctorId")
-    fun getAppointmentsByDoctorId(doctorId: Int): List<AppointmentFullInfo>
+    suspend fun getAppointmentsByDoctorId(doctorId: Int): List<AppointmentFullInfo>
 }

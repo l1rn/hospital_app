@@ -6,6 +6,39 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F1F3F4"
     tools:context=".DoctorProfileActivity">
 
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+      <Space
+          android:layout_width="30dp"
+          android:layout_height="wrap_content" />
+
+      <Button
+          android:id="@+id/back_button_from_doctor_profile"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:backgroundTint="#FAD2CF"
+          android:fontFamily="@font/montserrat_medium"
+          android:text="Назад"
+          android:textColor="#202124"
+          android:textSize="20dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+        <ListView
+            android:id="@+id/appointmentsListView"
+            android:layout_width="380dp"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+  </LinearLayout>
   </androidx.constraintlayout.widget.ConstraintLayout>

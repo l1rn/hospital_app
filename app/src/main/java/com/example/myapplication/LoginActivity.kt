@@ -38,9 +38,11 @@ class LoginActivity : AppCompatActivity() {
         lifecycleScope.launch {
             val isDoctor = db.doctorDao().isDoctorExists(phone)
             val isPatient = db.patientDao().isPatientExists(phone)
-            val patientId = db.patientDao().getIdByPhone(phone)
             if(isPatient){
-                SessionManager.savePatientId(context, patientId)
+                SessionManager.savePatientId(context, db.patientDao().getIdByPhone(phone))
+            }
+            if(isDoctor){
+                SessionManager.saveDoctorId(context, db.doctorDao().getIdByPhone(phone))
             }
             when {
                 isDoctor -> startActivity(Intent(this@LoginActivity, DoctorProfileActivity::class.java))

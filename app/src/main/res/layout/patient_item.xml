@@ -1,6 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#F1F3F4">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:orientation="vertical"
+        android:gravity="center">
+        <TextView
+            android:layout_width="300dp"
+            android:textSize="35dp"
+            android:text="Пациент"
+            android:gravity="center"
+            android:fontFamily="@font/montserrat_medium"
+            android:layout_height="50dp"/>
+
+        <TextView
+            android:layout_width="301dp"
+            android:layout_height="24dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="21dp"
+            tools:text="ФИО" />
+        <TextView
+            android:id="@+id/pFullName"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="19dp"
+            android:background="#CEEAD6"
+            tools:text="Попов Крутой Скамер"/>
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="24dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="21dp"
+            tools:text="Дата Рождения"/>
+        <TextView
+            android:id="@+id/pBirthDate"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="19dp"
+            android:background="#CEEAD6"
+            tools:text="22.11.2003"/>
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="24dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="21dp"
+            tools:text="Почта"/>
+        <TextView
+            android:id="@+id/pEmail"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="19dp"
+            android:background="#CEEAD6"
+            tools:text="popov@mail.ru"/>
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="24dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="21dp"
+            tools:text="Телефон"/>
+        <TextView
+            android:id="@+id/pPhone"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="19dp"
+            android:background="#CEEAD6"
+            tools:text="8999111222"/>
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
